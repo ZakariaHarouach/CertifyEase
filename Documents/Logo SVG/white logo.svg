@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 522.09 324.74">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: ReemKufi-Medium, 'Reem Kufi';
+        font-size: 89.74px;
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <text class="cls-2" transform="translate(0 288.85)"><tspan x="0" y="0">CERTI-EASE</tspan></text>
+      <path class="cls-1" d="M322.96,164.38c-39.31,0-76.26-15.29-104.02-43.06s-43.06-64.71-43.06-104.02h30c0,64.56,52.52,117.08,117.08,117.08v30Z"/>
+      <polygon class="cls-1" points="353.57 29.51 353.57 59.51 320.25 59.51 320.25 87.88 290.25 87.88 290.25 59.51 256.93 59.51 256.93 29.51 290.25 29.51 290.25 0 320.25 0 320.25 29.51 353.57 29.51"/>
+    </g>
+  </g>
+</svg>
