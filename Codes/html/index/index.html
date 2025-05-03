@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CERTI-EASE Navbar</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!---fontawsome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+   <link rel="stylesheet" href="../../css/style.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm px-4">
+      <div class="container-fluid py-2 d-flex align-items-center justify-content-between">
+
+        <!-- Left: Logo -->
+        <a class="navbar-brand d-flex align-items-center me-auto ms-5" href="#">
+          <img src="../../ressources/images/Asset-1.svg" alt="Logo" class="navbar-logo">
+        </a>
+
+        <!-- Toggle button for small screens -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Center: Links (collapsible on small screens) -->
+        <div class="collapse navbar-collapse mx-auto" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-auto gap-3">
+            <li class="nav-item">
+              <a class="nav-link" href="../Certificat S-P/cetificat_medical.html">Certificat Médical</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Certificat S-P/attestation.html">Demande Attestation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#aboutUS">À propos</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Buttons (desktop only) -->
+        <div class="d-none d-lg-flex gap-2 ms-auto">
+          <a href="../student/login_student.html">
+            <button class="btn-gradient-signin">Sign In</button>
+          </a>
+          <a href="../student/login_student.html">
+            <button class="btn-gradient-signup">Sign Up</button>
+          </a>
+        </div>
+
+      </div>
+    </nav>
+
+
+  <section class="hero-section container-fluid" id="hero">
+    <div class="row align-items-center">
+      <div class="col-lg-6 hero-text text-center text-lg-start">
+        <h1 class="ms-5 hero-title mt-3" id="hero-title" name="hero-title" data-text="Always Communicate With Adminstration with Ease And Simplicity">
+          <!-- Will be filled with JS -->
+        </h1>
+        <div class="hero-buttons mt-4 ms-5 d-flex justify-content-center justify-content-lg-start gap-3">
+          <button class="btn-gradient btn-start" id="start-btn" name="start-btn">Start</button>
+          <button class="btn-gradient btn-signup" id="signup-btn" name="signup-btn">Sign Up</button>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center mt-5 mt-lg-3">
+        <img src="../../ressources/images/students.png" alt="Students" class="hero-img" id="hero-img" name="hero-img" />
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-bar container-fluid text-white py-4">
+    <div class="row text-center align-items-center">
+      <div class="col-12 col-md-3 mb-3 mb-md-0 d-flex flex-column justify-content-center align-items-center">
+        <strong class="ofppt">OFPPT NTIC RABAT</strong>
+      </div>
+      <div class="col-12 col-md-3 mb-3 mb-md-0 d-flex flex-column justify-content-center align-items-center">
+        Adam Elmekadem<br>Zakaria Herouach
+      </div>
+      <div class="col-12 col-md-3 mb-3 mb-md-0 d-flex flex-column justify-content-center align-items-center">
+        Abdesamad Titamoh<br>Ilyas Dahs
+      </div>
+      <div class="col-12 col-md-3 d-flex flex-column justify-content-center align-items-center">
+        Chaimae Haoul ( prof )
+      </div>
+    </div>
+  </div>  
+
+  <section class="container mt-5 full-height" id="aboutUS" name="aboutUS">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-6">
+        <img src="../../ressources/images/friends.jpg" alt="friends" class="img-fluid rounded" id="about-img" name="about-img">
+      </div>
+      <div class="col-md-6 text-center text-md-start">
+        <h2 class="fw-semibold" id="about-title" name="about-title">About Us</h2>
+        <p id="about-paragraph-1" name="about-paragraph-1">
+          We are a team of four passionate individuals: Adam, Ziko, Ilyas, and Abdessamad. Each of us brings unique skills and perspectives to the table, making us a well-rounded and dynamic team.
+        </p>
+        <p id="about-paragraph-2" name="about-paragraph-2">
+          As students in our first year of Digital Development at OFPPT, we are constantly learning and growing. Our training has equipped us with a solid foundation in programming, design, and problem-solving, which we apply to every project we undertake.
+        </p>
+        <p id="about-paragraph-3" name="about-paragraph-3">
+          Our shared ambition and enthusiasm drive us to push boundaries and explore innovative solutions. Whether it's developing user-friendly applications or tackling complex challenges, we approach every task with dedication and creativity.
+        </p>
+        <p id="about-paragraph-4" name="about-paragraph-4">
+          Despite being at the beginning of our journey, we are committed to making a positive impact in the tech world. We believe in the power of collaboration and are excited to continue learning and growing together as a team.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container full-height" id="projects" name="projects">
+    <div class="mb-5">
+      <h2 class="section-title text-center" id="projects-title" name="projects-title">Our Last Projects</h2>
+
+    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators mt-4">
+        <li data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" id="indicator-1" name="indicator-1"></li>
+        <li data-bs-target="#projectCarousel" data-bs-slide-to="1" id="indicator-2" name="indicator-2"></li>
+        <li data-bs-target="#projectCarousel" data-bs-slide-to="2" id="indicator-3" name="indicator-3"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <!-- Project 1 -->
+        <div class="carousel-item active" id="project-1" name="project-1">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 text-center mb-4">
+              <img src="../../ressources/images/friends.jpg" alt="Project 1" class="img-fluid rounded-4">
+            </div>
+            <div class="col-md-6 text-center text-md-start">
+              <h3 class="mb-3">ToDoApp</h3>
+              <div class="card-tags d-flex justify-content-center justify-content-md-start flex-wrap">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                  <button class="btn genre mb-3">Web App</button>
+                  <div class="d-flex align-items-center gap-2">
+                    <a href="#" class="go-link">Go</a>
+                    <i class="fas fa-arrow-right"></i>
+                  </div>
+                </div>
+                <button class="btn me-2 mb-2">HTML</button>
+                <button class="btn me-2 mb-2">CSS</button>
+                <button class="btn me-2 mb-2">Bootstrap</button>
+                <button class="btn me-2 mb-2">PHP</button>
+              </div>
+              <p class="mb-4">
+                The ToDoApp is a productivity tool designed to help users organize their daily tasks efficiently. It features task prioritization, deadline reminders, and a sleek user interface. Built using React for dynamic rendering and Bootstrap for responsive design, the ToDoApp ensures users stay on top of their schedules. This project demonstrates our ability to create user-friendly and functional applications that address real-world needs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="carousel-item" id="project-2" name="project-2">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 text-center mb-4">
+              <img src="../../ressources/images/friends.jpg" alt="Project 2" class="img-fluid rounded-4">
+            </div>
+            <div class="col-md-6 text-center text-md-start">
+              <h3 class="mb-3">Portfolio</h3>
+              <div class="d-flex justify-content-between align-items-center w-100">
+                <button class="btn genre mb-3">Web App</button>
+                <div class="d-flex align-items-center gap-2">
+                  <a href="#" class="go-link">Go</a>
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+              <p class="mb-4">
+                This Portfolio project showcases a professional and visually appealing personal website for developers and designers. It includes sections for showcasing skills, projects, and contact information. The design is fully responsive, ensuring it looks great on all devices. Built with HTML, CSS, and JavaScript, this project demonstrates expertise in front-end development and attention to detail.
+              </p>
+              <div class="card-tags d-flex justify-content-center justify-content-md-start flex-wrap">
+                <button class="btn me-2 mb-2">HTML</button>
+                <button class="btn me-2 mb-2">CSS</button>
+                <button class="btn me-2 mb-2">JavaScript</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="carousel-item" id="project-3" name="project-3">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 text-center mb-4">
+              <img src="../../ressources/images/friends.jpg" alt="Project 3" class="img-fluid rounded-4">
+            </div>
+            <div class="col-md-6 text-center text-md-start">
+              <h3 class="mb-3">E-Commerce</h3>
+              <div class="d-flex justify-content-between align-items-center w-100">
+                <button class="btn genre mb-3">Web App</button>
+                <div class="d-flex align-items-center gap-2">
+                  <a href="#" class="go-link">Go</a>
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+              <p class="mb-4">
+                The E-Commerce project is a fully functional online store that allows users to browse products, add items to their cart, and complete purchases securely. It features a user-friendly interface, product filtering, and a secure checkout process. Built using PHP and MySQL for the backend, and Bootstrap for the front-end, this project demonstrates full-stack development skills and the ability to create scalable solutions.
+              </p>
+              <div class="card-tags d-flex justify-content-center justify-content-md-start flex-wrap">
+                <button class="btn me-2 mb-2">PHP</button>
+                <button class="btn me-2 mb-2">MySQL</button>
+                <button class="btn me-2 mb-2">Bootstrap</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer class="container footer mt-5">
+    <div class="row justify-content-center g-4">
+      
+      <div class="col-md-4">
+        <div class="glass-box">
+          <div class="footer-title">Quick links</div>
+          <a href="#" class="footer-link">Certificat Medicale</a>
+          <a href="#" class="footer-link">School Certificate</a>
+          <a href="#" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Sign In</a>
+          <a href="#" class="footer-link">Sign Up</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="glass-box">
+          <div class="footer-title">Team:</div>
+          <div class="footer-text">Adam Elmekadem</div>
+          <div class="footer-text">Zakaria Harouach</div>
+          <div class="footer-text">Abdesamad Tikonab</div>
+          <div class="footer-text">Ilyas Dahs</div>
+          <div class="footer-text italic">Ms. Chaimae Haoul <small>(Teacher)</small></div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="glass-box">
+          <div class="footer-title">Thanks For:</div>
+          <div class="footer-text">Ofppt Ntic Rabat</div>
+          <div class="footer-text">Ms Wassima Akhrif</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2024 CertifyEase. All rights reserved.
+      <div class="footer-links-bottom">
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Services Terms</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script src="../../js/animations.js"></script>
+
+</body>
+</html>

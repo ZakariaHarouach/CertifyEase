@@ -1,0 +1,157 @@
+:root {
+  --blue: #0575E6;
+  --chibi: #00ECFD;
+  --darkBlue: #021B79;
+  --green: #03D361;
+  --move: #a10c95;
+  --grey: #D9D9D9;
+  --bg: #EEEEEE;
+  --pink: #FD00A0;
+  --font : #131314;
+}
+
+.full-height {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-file-input {
+  display: none;
+}
+
+.file-upload-box {
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid var(--grey);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.file-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #999;
+}
+
+.file-label:hover {
+  color: var(--blue);
+  transition: color 0.3s ease;
+}
+
+.btn {
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-validate {
+  background: linear-gradient(135deg, var(--blue), var(--chibi));
+  border: none;
+  color: white; /* Ensure text color stays white */
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all .5s ease; /* Smooth transition for hover effects */
+}
+
+.btn-validate:hover {
+  background: linear-gradient(135deg, var(--darkBlue), var(--blue)); /* Slightly different gradient */
+  color: white; /* Keep text color white */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.section-title {
+  font-weight: 400;
+  margin: 40px 0 20px;
+  text-align: center;
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--blue);
+  font-weight: bold;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.username {
+  white-space: nowrap;
+}
+
+/* Table Styles */
+.table {
+  border: 1px solid var(--grey); /* Border around the table */
+  border-radius: 5px; /* Rounded corners */
+  overflow: hidden; /* Ensures rounded corners apply to the entire table */
+  background-color: white; /* Table background color */
+}
+
+.table th {
+  background-color: var(--blue);
+  color: white;
+  padding: 12px;
+}
+
+.table th:nth-last-child(1) {
+  background: linear-gradient(135deg, var(--blue), var(--chibi)); /* Different color for the last header */
+  color: white; /* Ensure text color stays white */
+}
+
+.table td {
+  padding: 12px;
+  color: var(--font); /* Default font color */
+  font-size: 0.95rem;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--bg); /* Light background for striped rows */
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: white; /* White background for even rows */
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid var(--grey); /* Borders for table cells */
+}
+
+.table th,
+.table td {
+  text-align: start; /* Center-align text */
+  margin-bottom: 20px;
+}
+
+/* Hover effect for table rows in tbody */
+.table tbody tr:hover {
+  background-color: #0575E6; /* Soft blue background color */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn-logout {
+    padding: 6px 30px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, var(--blue), var(--chibi));
+    color: white;
+    border: none;
+    transition: all 1s ease-in-out;
+}
+
+.btn-logout:hover {
+    background: linear-gradient(135deg, var(--blue) 100%, var(--blue));
+}

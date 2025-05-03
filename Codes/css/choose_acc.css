@@ -1,0 +1,118 @@
+:root {
+    --blue: #0575E6;
+    --chibi: #00ECFD;
+    --darkBlue: #021B79;
+    --green: #03D361;
+    --move: #a10c95;
+    --grey: #D9D9D9;
+    --bg: #EEEEEE;
+    --pink: #FD00A0;
+    --font : #131314;
+}
+
+* {
+    font-family: poppins, sans-serif;
+}
+
+.full-height {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+h5 {
+    font-weight: 600;
+}
+
+.card-option {
+    height: 300px; /* Set a fixed height for the cards */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    padding: 20px; /* Add padding for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card-option:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    height: 100%;
+}
+
+.card-option h5 {
+    margin-bottom: 15px; /* Add spacing below the title */
+    font-weight: bold;
+}
+
+.card-option p {
+    margin-top: auto; /* Push the paragraph to the bottom if needed */
+    font-size: 0.95rem;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.gradient-student {
+    background: linear-gradient(to bottom, var(--blue), var(--darkBlue));
+}
+
+.gradient-professor {
+    background: linear-gradient(to bottom, var(--darkBlue), var(--pink));
+}
+
+.gradient-admin {
+    background: linear-gradient(to bottom, var(--green), var(--darkBlue));
+}
+
+section {
+    flex: 1; /* Allow the section to grow and fill the available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+    padding-bottom: 20px; /* Add spacing above the footer */
+}
+
+footer {
+    background-color: #f8f9fa; /* Optional: Light background for the footer */
+    color: #555; /* Optional: Softer text color */
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #ddd; /* Optional: Add a subtle border at the top */
+    margin-top: 80px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-text {
+    opacity: 0.7;
+}
