@@ -87,3 +87,38 @@ a {
     text-decoration: none;
     color: white;
 }
+
+.signup {
+  color: white;
+  background-color: var(--darkBlue);
+  transition: all 0.5s ease;
+}
+
+.signup-student {
+  border: 2px solid var(--blue);
+}
+
+.signup-student:hover {
+  background-color: var(--blue);
+  color: white;
+}
+
+.signup-prof {
+  border: 2px solid var(--darkBlue);
+}
+
+.signup-prof:hover {
+  background-color: var(--move);
+  border: 2px solid var(--move);
+  color: white;
+}
+
+.signup-admin {
+  border: 2px solid var(--darkBlue);
+}
+
+.signup-admin:hover {
+  background-color: var(--green);
+  color: white;
+  border: 2px solid var(--green);
+}

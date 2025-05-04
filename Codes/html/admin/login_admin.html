@@ -16,13 +16,25 @@
             <div id="text" class="col-md-7 d-flex flex-column justify-content-center align-items-start ps-5 text-admin">
                 <div class="content">
                     <h1>Certi-Ease</h1>
-                    <p>The most popular peer to lending at sea</p>
-                    <button id="butn" class="btn py-2 px-3 admin">Read more</button>
+                    <p>The most popular peer-to-peer lending at sea</p>
+                    <div class="d-flex gap-3">
+                        <!-- Read More Button -->
+                        <button id="butn" class="btn py-2 px-3 admin">Read more</button>
+
+                        <!-- Sign In Button -->
+                        <a href="iscription_admin1.html">
+                            <button id="signUpButton" class="btn btn-outline-primary py-2 px-3 signup signup-admin">Sign In</button>
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <div class="col-md-5 d-flex flex-column justify-content-center align-items-center ps-5">
-                <form class="form-section w-75">
+                <form 
+                  class="form-section w-75" 
+                  action="choix-fonctionement.html" 
+                  method="get"
+                >
                     <h2>Hello Admin!</h2>
                     <p>Welcome back</p>
 
@@ -59,7 +71,7 @@
                       id="adminLoginButton" 
                       name="adminLoginButton" 
                       type="submit" 
-                      class="btn w-100 p-3 admin">
+                      class="btn btn-primary w-100 p-3 admin">
                       Login
                     </button>
 

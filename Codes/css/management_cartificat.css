@@ -1,0 +1,227 @@
+:root {
+    --blue: #0575E6;
+    --chibi: #00ECFD;
+    --darkBlue: #021B79;
+    --green: #03D361;
+    --move: #a10c95;
+    --grey: #D9D9D9;
+    --bg: #EEEEEE;
+    --pink: #FD00A0;
+    --font : #131314;
+  }
+  
+  .full-height {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .custom-file-input {
+    display: none;
+  }
+  
+  .file-upload-box {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid var(--grey);
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .file-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: #999;
+  }
+  
+  .file-label:hover {
+    color: var(--green);
+    transition: color 0.3s ease;
+  }
+  
+  .btn {
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .btn-validate {
+    background: linear-gradient(135deg, var(--green), var(--darkBlue));
+    border: none;
+    color: white; /* Ensure text color stays white */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all .5s ease; /* Smooth transition for hover effects */
+  }
+  
+  .btn-validate:hover {
+    background: linear-gradient(135deg, var(--darkBlue), var(--darkBlue)); /* Slightly different gradient */
+    color: white; /* Keep text color white */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+
+  .btn-accepter, .btn-refuser {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+
+  .btn-refuser {
+    background: linear-gradient(135deg, var(--darkBlue), var(--green));
+    margin-left: 10px;
+  }
+
+  .btn-refuser:hover {
+    background: linear-gradient(135deg, var(--darkBlue), var(--darkBlue)); /* Slightly different gradient */
+    color: white;
+    transform: scale(1.05);
+  }
+
+  .btn-accepter {
+    background: linear-gradient(135deg, var(--green), var(--darkBlue));
+    margin-right: 10px;
+  }
+
+  .btn-accepter:hover {
+    background: linear-gradient(135deg, var(--green), var(--green)); /* Slightly different gradient */
+    color: white;
+    transform: scale(1.05);
+  }
+
+  .btn-afficher {
+    
+    border: 2px solid var(--darkBlue); /* Border color */
+    color: var(--darkBlue); /* Ensure text color stays white */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all .5s ease; /* Smooth transition for hover effects */
+  }
+
+  .btn-afficher:hover {
+    background: linear-gradient(135deg, var(--darkBlue), var(--darkBlue)); /* Slightly different gradient */
+    color: white; /* Keep text color white */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+  .section-title {
+    font-weight: 400;
+    margin: 40px 0 20px;
+    text-align: center;
+  }
+  
+  .cursor {
+    display: inline-block;
+    color: var(--green);
+    font-weight: bold;
+    animation: blink 0.8s step-end infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  .username {
+    white-space: nowrap;
+  }
+
+  #reason {
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--grey);
+    background-color: white;
+    color: var(--font); /* Default font color */
+    font-size: 0.95rem;
+  }
+  
+  /* Table Styles */
+  .table {
+    border: 1px solid var(--grey); /* Border around the table */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden; /* Ensures rounded corners apply to the entire table */
+    background-color: white; /* Table background color */
+  }
+  
+  .table th {
+    background-color: var(--darkBlue);
+    color: white;
+    padding: 12px;
+  }
+  
+  .table th:nth-last-child(1) {
+    background: linear-gradient(135deg, var(--darkBlue), var(--green)); /* Different color for the last header */
+    color: white; /* Ensure text color stays white */
+  }
+  
+  .table td {
+    padding: 12px;
+    color: var(--font); /* Default font color */
+    font-size: 0.95rem;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--bg); /* Light background for striped rows */
+  }
+  
+  .table-striped tbody tr:nth-of-type(even) {
+    background-color: white; /* White background for even rows */
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid var(--grey); /* Borders for table cells */
+  }
+  
+  .table th,
+  .table td {
+    text-align: start; /* Center-align text */
+    margin-bottom: 20px;
+  }
+  
+  /* Hover effect for table rows in tbody */
+  .table tbody tr:hover {
+    background-color: #0575E6; /* Soft blue background color */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+
+.btn-logout {
+    padding: 6px 30px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, var(--darkBlue), var(--green));
+    color: white;
+    border: none;
+    transition: all 1s ease-in-out;
+}
+
+.btn-logout:hover {
+    background: linear-gradient(135deg, var(--green) 100%, var(--green));
+}
+
+/* Ensure equal spacing and alignment for buttons */
+.text-center .d-flex {
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* Adjust spacing between buttons */
+}
+
+/* Optional: Adjust button width for consistency */
+.text-center .btn {
+  min-width: 120px; /* Ensure buttons have equal width */
+}
+

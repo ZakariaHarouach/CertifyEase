@@ -1,0 +1,70 @@
+:root {
+    --blue: #0575E6;
+    --chibi: #00ECFD;
+    --darkBlue: #021B79;
+    --green: #03D361;
+    --move: #a10c95;
+    --grey: #D9D9D9;
+    --bg: #EEEEEE;
+    --pink: #FD00A0;
+    --font : #131314;
+}
+
+footer {
+    padding: 60px 20px 20px;
+  }
+  
+  .glass-box {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    padding: 20px;
+    min-height: 250px;
+    color: #000;
+    transition: all 0.3s ease;
+  }
+  
+  .glass-box:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+    transform: translateY(-5px);
+  }
+  
+  .footer-title {
+    font-weight: bold;
+    color: var(--blue);
+    margin-bottom: 10px;
+  }
+  
+  .footer-link,
+  .footer-text {
+    font-size: 14px;
+    color: var(--font);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+  }
+  
+  .footer-text.italic {
+    font-style: italic;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 30px;
+    color: var(--font);
+  }
+  
+  .footer-links-bottom {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  
+  .footer-links-bottom a {
+    margin: 0 10px;
+    color: var(--font);
+    text-decoration: none;
+  }

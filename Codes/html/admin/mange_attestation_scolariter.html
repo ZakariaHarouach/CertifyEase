@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="../../css/navbar.css"/>
   <link rel="stylesheet" href="../../css/footer.css"/>
-  <link rel="stylesheet" href="../../css/certificat_medical.css"/>
+  <link rel="stylesheet" href="../../css/management_cartificat.css"/>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
     <div class="container-fluid py-2">
 
       <!-- Left: Logo -->
-      <a class="navbar-brand d-flex align-items-center" href="/Codes/html/index/index.html">
+      <a class="navbar-brand d-flex align-items-center" href="../index/index.html">
         <img src="../../../Documents/Logo-SVG/Asset-1.svg" alt="Logo" class="navbar-logo">
       </a>
 
@@ -37,10 +37,10 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mx-auto gap-3">
           <li class="nav-item">
-            <a class="nav-link" href="#">Certificat Médical</a>
+            <a class="nav-link" href="mange_certificat_medicale.html">Certificat Médical</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="attestation.html">Demande Attestation</a>
+            <a class="nav-link" href="#">Demande Attestation</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#aboutUS">À propos</a>
@@ -71,11 +71,8 @@
       <div class="row justify-content-center mb-4">
         <div class="col-12 col-md-10 col-lg-8">
           <div class="file-upload-box d-flex justify-content-between align-items-center p-3 rounded">
-            <label for="certificate" class="file-label d-flex align-items-center w-100">
-              <span>
-                <i class="fas fa-paperclip me-2"></i> Add your certificate here
-              </span>
-              <input type="file" id="certificate" class="custom-file-input" />
+            <label for="reason" class="file-label d-flex align-items-center w-100">
+              <input type="search" id="reason" class="form-control reason-input ms-3 border-0" placeholder="Search for a student / prof / admin.. by email" />
             </label>
             <button type="submit" class="btn btn-validate ms-3">
               <i class="fas fa-arrow-right"></i>
@@ -84,20 +81,10 @@
         </div>
       </div>
 
-      <!-- Date Range -->
-      <div class="row justify-content-center align-items-center mb-4">
-        <div class="col-12 col-md-5 col-lg-4 mt-lg-0 mb-lg-0 mb-4">
-          <input type="date" class="form-control py-3 px-3" />
-        </div>
-        <div class="col-12 col-md-5 col-lg-4">
-          <input type="date" class="form-control py-3 px-3" />
-        </div>
-      </div>
-
       <!-- Validate Button -->
       <div class="row justify-content-center w-100">
         <div class="col-12 col-md-5 col-lg-3 text-center w-75">
-          <button class="btn btn-validate px-5 py-3 w-50 rounded">Validate</button>
+          <button class="btn btn-validate px-5 py-3 w-50 rounded">Search</button>
         </div>
       </div>
     </form>
@@ -105,35 +92,62 @@
   
   <!-- Table Section -->
   <section class="container mt-5 mb-5">
-    <div class="section-title display-4 mb-5">Medical Certificates</div>
+    <div class="section-title display-4 mb-5">School certifications</div>
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="p-2">
           <tr>
-            <th>Name</th>
+            <th>Email</th>
             <th>Group</th>
-            <th>Start Date - End Date</th>
-            <th>At...</th>
+            <th>Date</th>
+            <th>Accepter / Refuser</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Adam Elmekadem</td>
+            <td>2002140600454@ofppt-edu.ma</td>
             <td>Dev110</td>
-            <td>12 - 06 - 2025 / 20 - 06 - 2025</td>
-            <td>19 - 06 - 2025 &nbsp; 14:07</td>
+            <td>16 - 06 - 2025 &nbsp; 14:07</td>
+            <td class="text-center">
+              <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
+                <a href="#" class="me-md-2">
+                  <button class="btn btn-accepter">Accepter</button>
+                </a>
+                <a href="#">
+                  <button class="btn btn-refuser">Refuser</button>
+                </a>
+              </div>
+            </td>
           </tr>
           <tr>
-            <td>Adam Elmekadem</td>
+            <td>2002140600454@ofppt-edu.ma</td>
             <td>Dev110</td>
-            <td>12 - 06 - 2025 / 20 - 06 - 2025</td>
-            <td>19 - 06 - 2025 &nbsp; 14:07</td>
+            <td>16 - 06 - 2025 &nbsp; 14:07</td>
+            <td class="text-center">
+              <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
+                <a href="#" class="me-md-2">
+                  <button class="btn btn-accepter">Accepter</button>
+                </a>
+                <a href="#">
+                  <button class="btn btn-refuser">Refuser</button>
+                </a>
+              </div>
+            </td>
           </tr>
           <tr>
-            <td>Adam Elmekadem</td>
+            <td>2002140600454@ofppt-edu.ma</td>
             <td>Dev110</td>
-            <td>12 - 06 - 2025 / 20 - 06 - 2025</td>
-            <td>19 - 06 - 2025 &nbsp; 14:07</td>
+            <td>16 - 06 - 2025 &nbsp; 14:07</td>
+            <td class="text-center">
+              <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
+                <a href="#" class="me-md-2">
+                  <button class="btn btn-accepter">Accepter</button>
+                </a>
+                <a href="#">
+                  <button class="btn btn-refuser">Refuser</button>
+                </a>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>

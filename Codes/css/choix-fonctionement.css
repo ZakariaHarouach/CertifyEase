@@ -1,0 +1,130 @@
+:root {
+    --blue: #0575E6;
+    --chibi: #00ECFD;
+    --darkBlue: #021B79;
+    --green: #03D361;
+    --move: #a10c95;
+    --grey: #D9D9D9;
+    --bg: #EEEEEE;
+    --pink: #FD00A0;
+    --font : #131314;
+}
+
+/* General styles */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Apply overflow: hidden only for large screens */
+@media (min-width: 992px) {
+  body {
+    overflow: hidden;
+  }
+}
+
+nav {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+main, footer {
+  width: 100%;
+  max-width: 1200px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 7rem;
+}
+
+.btn-gradient-logout, .btn-start {
+  padding: 6px 30px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, var(--darkBlue), var(--green));
+  color: white;
+  border: none;
+  transition: all 1s ease-in-out;
+}
+
+.btn-gradient-logout:hover {
+  background: linear-gradient(135deg, var(--green) 100%, var(--green));
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-logo {
+  width: 100px;
+  margin-right: 8px;
+}
+
+.navbar-nav .nav-item {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.navbar-nav .nav-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--chibi));
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.navbar-nav .nav-item:hover::before {
+  width: 100%;
+}
+
+.gradient-box {
+  width: 350px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.gradient-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-1 {
+  background: linear-gradient(var(--green), var(--darkBlue));
+}
+
+.gradient-2 {
+  background: linear-gradient(var(--darkBlue), var(--green));
+}
+
+footer {
+  width: 100%;
+  flex-shrink: 0;
+  padding-top: 7rem;
+}
+
+footer a {
+  color: var(--font);
+}
