@@ -8,51 +8,44 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../../css/Login_student.css">
+  <link rel="stylesheet" href="../css/Login_student.css">
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">      
-            <div id="text" class="col-md-7 d-flex flex-column justify-content-center align-items-start ps-5 text-admin">
+            <div id="text" class="col-md-7 d-flex flex-column justify-content-center align-items-start ps-5 text-student">
                 <div class="content">
                     <h1>Certi-Ease</h1>
                     <p>Welcome to CertiFy-Ease! <br>
                         Communicate with administration with ease and simplicity!!</p>
                     <div class="d-flex gap-3">
-                        <!-- Read More Button -->
-                        <button id="butn" class="btn py-2 px-3 admin">Read more</button>
-
-                        <!-- Sign In Button -->
-                        <a href="iscription_admin1.html">
-                            <button id="signUpButton" class="btn btn-outline-primary py-2 px-3 signup signup-admin">Sign In</button>
-                        </a>
+                      
+                      <button id="butn" class="btn py-2 px-3 student">Read more</button>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-5 d-flex flex-column justify-content-center align-items-center ps-5">
-                <form 
-                  class="form-section w-75" 
-                  action="choix-fonctionement.html" 
-                  method="get"
-                >
-                    <h2>Hello Admin!</h2>
-                    <p>Welcome back</p>
+                <form class="form-section w-75"
+                      action="../Certificat S-P/cetificat_medical.html" 
+                      method="get">
+                    <h2>Ooooh !</h2>
+                    <p>Verify your outlook and put your code</p>
 
-                    <!-- Email Input -->
-                    <div class="mt-5 mb-3">
+                    <!-- code Input -->
+                    <div class="mb-3">
                         <div class="input-group">
-                            <span class="input-group-text"><i class='bx bx-envelope'></i></span>
+                            <span class="input-group-text"><i class='bx bx-lock'></i></span>
                             <input 
-                              type="email" 
-                              id="email" 
-                              name="adminEmail" 
+                              type="password" 
+                              id="password" 
+                              name="password" 
                               class="form-control p-3" 
-                              placeholder="Email Address" 
+                              placeholder="Password" 
                               required>
                         </div>
                     </div>
-                    
+
                     <!-- Password Input -->
                     <div class="mb-3">
                         <div class="input-group">
@@ -60,38 +53,35 @@
                             <input 
                               type="password" 
                               id="password" 
-                              name="adminPassword" 
+                              name="password" 
                               class="form-control p-3" 
                               placeholder="Password" 
                               required>
                         </div>
                     </div>
-                    
+
                     <!-- Login Button -->
                     <button 
-                      id="adminLoginButton" 
-                      name="adminLoginButton" 
+                      id="loginButton" 
+                      name="loginButton" 
                       type="submit" 
-                      class="btn btn-primary w-100 p-3 admin">
-                      Login
+                      class="btn btn-primary w-100 p-3 student">
+                      Confirm
                     </button>
 
                     <!-- Forgot Password Link -->
                     <div class="d-flex justify-content-center">
                         <a 
-                          id="adminForgotPasswordLink" 
-                          name="adminForgotPasswordLink" 
+                          id="forgotPasswordLink" 
+                          name="forgotPasswordLink" 
                           class="text-dark mt-3" 
-                          href="../../forgetPassword/forget-pass.html">
-                          Forget Password
+                          href="#">
+                          RE-send code
                         </a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-
-    <script src="../../js/login_Validation.js"></script>
 </body>
 </html>

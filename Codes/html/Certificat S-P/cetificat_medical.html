@@ -61,7 +61,10 @@
   <!-- Greeting -->
 
   <section class="container full-height d-flex flex-column justify-content-center">
-    <form class="w-100">
+    <form 
+      class="w-100"
+      onsubmit="return validateCertificateForm()"
+    >
       <!-- Greeting -->
       <div class="hello-msg text-center display-4 mb-5">
         Hello, <span class="username" data-name="Adam"></span><span class="cursor">|</span>
@@ -72,7 +75,7 @@
         <div class="col-12 col-md-10 col-lg-8">
           <div class="file-upload-box d-flex justify-content-between align-items-center p-3 rounded">
             <label for="certificate" class="file-label d-flex align-items-center w-100">
-              <span>
+              <span id="fileName">
                 <i class="fas fa-paperclip me-2"></i> Add your certificate here
               </span>
               <input type="file" id="certificate" class="custom-file-input" />
@@ -191,6 +194,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <script src="../../js/animations.js"></script>
+
+  <script src="../../js/certifications validation/medical_certif_validation.js"></script>
 
 </body>
 </html>

@@ -37,10 +37,10 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mx-auto gap-3">
           <li class="nav-item">
-            <a class="nav-link" href="mange_certificat_medicale.html">Certificat Médical</a>
+            <a class="nav-link" href="mange_certificat_medicale.html">Gestion C.Medical</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Demande Attestation</a>
+            <a class="nav-link" href="#">Gestion D'Attestation</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#aboutUS">À propos</a>
@@ -111,10 +111,22 @@
             <td class="text-center">
               <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
                 <a href="#" class="me-md-2">
-                  <button class="btn btn-accepter">Accepter</button>
+                  <button 
+                    class="btn btn-accepter" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#actionModal"
+                  >
+                    Accepter
+                  </button>
                 </a>
                 <a href="#">
-                  <button class="btn btn-refuser">Refuser</button>
+                  <button 
+                    class="btn btn-refuser" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#actionModal"
+                  >
+                    Refuser
+                  </button>
                 </a>
               </div>
             </td>
@@ -126,10 +138,22 @@
             <td class="text-center">
               <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
                 <a href="#" class="me-md-2">
-                  <button class="btn btn-accepter">Accepter</button>
+                  <button 
+                    class="btn btn-accepter" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#actionModal"
+                  >
+                    Accepter
+                  </button>
                 </a>
                 <a href="#">
-                  <button class="btn btn-refuser">Refuser</button>
+                  <button 
+                    class="btn btn-refuser" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#actionModal"
+                  >
+                    Refuser
+                  </button>
                 </a>
               </div>
             </td>
@@ -141,10 +165,22 @@
             <td class="text-center">
               <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
                 <a href="#" class="me-md-2">
-                  <button class="btn btn-accepter">Accepter</button>
+                  <button 
+                    class="btn btn-accepter" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#actionModal"
+                  >
+                    Accepter
+                  </button>
                 </a>
                 <a href="#">
-                  <button class="btn btn-refuser">Refuser</button>
+                  <button 
+                    class="btn btn-refuser" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#actionModal"
+                  >
+                    Refuser
+                  </button>
                 </a>
               </div>
             </td>
@@ -153,6 +189,48 @@
       </table>
     </div>
   </section>
+
+  <!-- Modal -->
+  <div 
+    class="modal fade" 
+    id="actionModal" 
+    tabindex="-1" 
+    aria-labelledby="actionModalLabel" 
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="actionModalLabel">Confirmation</h5>
+          <button 
+            type="button" 
+            class="btn-close" 
+            data-bs-dismiss="modal" 
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to proceed with this action?
+        </div>
+        <div class="modal-footer">
+          <button 
+            type="button" 
+            class="btn-cancel" 
+            data-bs-dismiss="modal"
+          >
+            Cancel
+          </button>
+          <button 
+            type="button" 
+            class="btn-confirm" 
+            id="confirmAction"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer class="container footer mt-5">
     <div class="row justify-content-center g-4">
@@ -205,6 +283,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <script src="../../js/animations.js"></script>
+  <script src="../../js/modal.js"></script>
 
 </body>
 </html>

@@ -200,7 +200,7 @@
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
   }
 
-.btn-logout {
+.btn-logout, .btn-confirm {
     padding: 6px 30px;
     border-radius: 4px;
     background: linear-gradient(135deg, var(--darkBlue), var(--green));
@@ -209,8 +209,17 @@
     transition: all 1s ease-in-out;
 }
 
-.btn-logout:hover {
+.btn-logout:hover, .btn-confirm:hover {
     background: linear-gradient(135deg, var(--green) 100%, var(--green));
+}
+
+.btn-cancel {
+    font-weight: 600;
+    padding: 6px 30px;
+    color: var(--font);
+    border: none;
+    background: none;
+
 }
 
 /* Ensure equal spacing and alignment for buttons */

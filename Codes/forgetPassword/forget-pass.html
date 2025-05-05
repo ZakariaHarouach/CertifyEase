@@ -8,24 +8,19 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../../css/Login_student.css">
+  <link rel="stylesheet" href="../css/Login_student.css">
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">      
-            <div id="text" class="col-md-7 d-flex flex-column justify-content-center align-items-start ps-5 text-prof">
+            <div id="text" class="col-md-7 d-flex flex-column justify-content-center align-items-start ps-5 text-student">
                 <div class="content">
                     <h1>Certi-Ease</h1>
                     <p>Welcome to CertiFy-Ease! <br>
                         Communicate with administration with ease and simplicity!!</p>
                     <div class="d-flex gap-3">
-                        <!-- Read More Button -->
-                        <button id="butn" class="btn py-2 px-3 prof">Read more</button>
-
-                        <!-- Sign In Button -->
-                        <a href="iscription_prof1.html">
-                            <button id="signUpButton" class="btn btn-outline-primary py-2 px-3 signup signup-prof">Sign Up</button>
-                        </a>
+                      
+                      <button id="butn" class="btn py-2 px-3 student">Read more</button>
                     </div>
                 </div>
             </div>
@@ -34,11 +29,11 @@
                 <form class="form-section w-75"
                       action="../Certificat S-P/cetificat_medical.html" 
                       method="get">
-                    <h2>Hello prof!</h2>
-                    <p>Welcome back</p>
+                    <h2>Ooooh !</h2>
+                    <p>forgeting pawwsord ? Enter your email</p>
 
                     <!-- Email Input -->
-                    <div class="mt-5 mb-3">
+                    <div class=" mt-5 mb-3">
                         <div class="input-group">
                             <span class="input-group-text"><i class='bx bx-envelope'></i></span>
                             <input 
@@ -50,47 +45,29 @@
                               required>
                         </div>
                     </div>
-                    
-                    <!-- Password Input -->
-                    <div class="mb-3">
-                        <div class="input-group">
-                            <span class="input-group-text"><i class='bx bx-lock'></i></span>
-                            <input 
-                              type="password" 
-                              id="password" 
-                              name="profPassword" 
-                              class="form-control p-3" 
-                              placeholder="Password" 
-                              required>
-                        </div>
-                    </div>
-                    
+
                     <!-- Login Button -->
                     <button 
-                      id="profLoginButton" 
-                      name="profLoginButton" 
+                      id="loginButton" 
+                      name="loginButton" 
                       type="submit" 
-                      class="btn w-100 p-3 prof">
-                      Login
+                      class="btn btn-primary w-100 p-3 student">
+                      Send Code
                     </button>
 
                     <!-- Forgot Password Link -->
                     <div class="d-flex justify-content-center">
                         <a 
-                          id="profForgotPasswordLink" 
-                          name="profForgotPasswordLink" 
+                          id="forgotPasswordLink" 
+                          name="forgotPasswordLink" 
                           class="text-dark mt-3" 
-                          href="../../forgetPassword/forget-pass.html">
-                          Forget Password
+                          href="../html/index/choose_acc.html">
+                          Back to login
                         </a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-
-
-    <script src="../../js/login_Validation.js"></script>
 </body>
 </html>

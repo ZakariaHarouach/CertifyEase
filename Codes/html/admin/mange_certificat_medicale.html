@@ -97,67 +97,90 @@
       <table class="table table-bordered">
         <thead class="p-2">
           <tr>
-            <th>Name</th>
+            <th>Email</th>
             <th>Group</th>
-            <th>Start Date - End Date</th>
-            <th>AT..</th>
+            <th>Date</th>
             <th>Accepter / Refuser</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Adam Elmekadem</td>
+            <td>2002140600454@ofppt-edu.ma</td>
             <td>Dev110</td>
-            <td>19 - 06 - 2025 &nbsp; 25 - 06 - 2025</td>
             <td>16 - 06 - 2025 &nbsp; 14:07</td>
-            <td class="text-center align-buttons">
-              <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
-                <a href="#" class="m-md-2">
-                  <button class="btn btn-accepter">Accepter</button>
-                </a>
+            <td class="text-center">
+              <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
                 <a href="#" class="me-md-2">
-                  <button class="btn btn-refuser">Refuser</button>
+                  <button 
+                    class="btn btn-accepter" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#actionModal"
+                  >
+                    Accepter
+                  </button>
                 </a>
                 <a href="#">
-                  <button class="btn btn-afficher">Afficher</button>
+                  <button 
+                    class="btn btn-refuser" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#actionModal"
+                  >
+                    Refuser
+                  </button>
                 </a>
               </div>
             </td>
           </tr>
           <tr>
-            <td>Adam Elmekadem</td>
+            <td>2002140600454@ofppt-edu.ma</td>
             <td>Dev110</td>
-            <td>19 - 06 - 2025 19 - 06 - 2025</td>
             <td>16 - 06 - 2025 &nbsp; 14:07</td>
-            <td class="text-center align-buttons">
-              <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+            <td class="text-center">
+              <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
                 <a href="#" class="me-md-2">
-                  <button class="btn btn-accepter">Accepter</button>
-                </a>
-                <a href="#" class="me-md-2">
-                  <button class="btn btn-refuser">Refuser</button>
+                  <button 
+                    class="btn btn-accepter" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#actionModal"
+                  >
+                    Accepter
+                  </button>
                 </a>
                 <a href="#">
-                  <button class="btn btn-afficher">Afficher</button>
+                  <button 
+                    class="btn btn-refuser" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#actionModal"
+                  >
+                    Refuser
+                  </button>
                 </a>
               </div>
             </td>
           </tr>
           <tr>
-            <td>Adam Elmekadem</td>
+            <td>2002140600454@ofppt-edu.ma</td>
             <td>Dev110</td>
-            <td>19 - 06 - 2025 19 - 06 - 2025</td>
             <td>16 - 06 - 2025 &nbsp; 14:07</td>
-            <td class="text-center align-buttons">
-              <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+            <td class="text-center">
+              <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
                 <a href="#" class="me-md-2">
-                  <button class="btn btn-accepter">Accepter</button>
-                </a>
-                <a href="#" class="me-md-2">
-                  <button class="btn btn-refuser">Refuser</button>
+                  <button 
+                    class="btn btn-accepter" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#actionModal"
+                  >
+                    Accepter
+                  </button>
                 </a>
                 <a href="#">
-                  <button class="btn btn-afficher">Afficher</button>
+                  <button 
+                    class="btn btn-refuser" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#actionModal"
+                  >
+                    Refuser
+                  </button>
                 </a>
               </div>
             </td>
@@ -166,6 +189,48 @@
       </table>
     </div>
   </section>
+
+  <!-- Modal -->
+  <div 
+    class="modal fade" 
+    id="actionModal" 
+    tabindex="-1" 
+    aria-labelledby="actionModalLabel" 
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="actionModalLabel">Confirmation</h5>
+          <button 
+            type="button" 
+            class="btn-close" 
+            data-bs-dismiss="modal" 
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to proceed with this action?
+        </div>
+        <div class="modal-footer">
+          <button 
+            type="button" 
+            class="btn-cancel" 
+            data-bs-dismiss="modal"
+          >
+            Cancel
+          </button>
+          <button 
+            type="button" 
+            class="btn-confirm" 
+            id="confirmAction"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer class="container footer mt-5">
     <div class="row justify-content-center g-4">
