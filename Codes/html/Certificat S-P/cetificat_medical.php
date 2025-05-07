@@ -1,3 +1,7 @@
+<?php
+require_once '../../php/includes/fetch_certificat_medical.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,12 +66,15 @@
 
   <section class="container full-height d-flex flex-column justify-content-center">
     <form 
+      method="POST" 
+      action="../../php/cerificat madicale/add_certificate.php" 
+      enctype="multipart/form-data" 
       class="w-100"
       onsubmit="return validateCertificateForm()"
     >
       <!-- Greeting -->
       <div class="hello-msg text-center display-4 mb-5">
-        Hello, <span class="username" data-name="Adam"></span><span class="cursor">|</span>
+        Hello, <span class="username" data-name="<?php echo htmlspecialchars($_SESSION['first_name']); ?>"></span><span class="cursor">|</span>
       </div>
 
       <!-- File Upload -->
@@ -78,11 +85,8 @@
               <span id="fileName">
                 <i class="fas fa-paperclip me-2"></i> Add your certificate here
               </span>
-              <input type="file" id="certificate" class="custom-file-input" />
+              <input type="file" id="certificate" name="certificate" class="custom-file-input" required />
             </label>
-            <button type="submit" class="btn btn-validate ms-3">
-              <i class="fas fa-arrow-right"></i>
-            </button>
           </div>
         </div>
       </div>
@@ -90,17 +94,17 @@
       <!-- Date Range -->
       <div class="row justify-content-center align-items-center mb-4">
         <div class="col-12 col-md-5 col-lg-4 mt-lg-0 mb-lg-0 mb-4">
-          <input type="date" class="form-control py-3 px-3" />
+          <input type="date" name="start_date" class="form-control py-3 px-3" required />
         </div>
         <div class="col-12 col-md-5 col-lg-4">
-          <input type="date" class="form-control py-3 px-3" />
+          <input type="date" name="end_date" class="form-control py-3 px-3" required />
         </div>
       </div>
 
       <!-- Validate Button -->
       <div class="row justify-content-center w-100">
         <div class="col-12 col-md-5 col-lg-3 text-center w-75">
-          <button class="btn btn-validate px-5 py-3 w-50 rounded">Validate</button>
+          <button type="submit" class="btn btn-validate px-5 py-3 w-50 rounded">Validate</button>
         </div>
       </div>
     </form>
@@ -108,40 +112,48 @@
   
   <!-- Table Section -->
   <section class="container mt-5 mb-5">
-    <div class="section-title display-4 mb-5">Medical Certificates</div>
+    <div class="section-title display-4 mb-5">Medical Certifications</div>
     <div class="table-responsive">
-      <table class="table table-bordered">
-        <thead class="p-2">
-          <tr>
-            <th>Name</th>
-            <th>Group</th>
-            <th>Start Date - End Date</th>
-            <th>At...</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Adam Elmekadem</td>
-            <td>Dev110</td>
-            <td>12 - 06 - 2025 / 20 - 06 - 2025</td>
-            <td>19 - 06 - 2025 &nbsp; 14:07</td>
-          </tr>
-          <tr>
-            <td>Adam Elmekadem</td>
-            <td>Dev110</td>
-            <td>12 - 06 - 2025 / 20 - 06 - 2025</td>
-            <td>19 - 06 - 2025 &nbsp; 14:07</td>
-          </tr>
-          <tr>
-            <td>Adam Elmekadem</td>
-            <td>Dev110</td>
-            <td>12 - 06 - 2025 / 20 - 06 - 2025</td>
-            <td>19 - 06 - 2025 &nbsp; 14:07</td>
-          </tr>
-        </tbody>
-      </table>
+        <table class="table table-bordered">
+            <thead class="p-2">
+                <tr>
+                    <th>Name</th>
+                    <th>Group</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
+                    <th>File</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (empty($certificates)): ?>
+                    <tr>
+                        <td colspan="6" class="text-center">No certificates found.</td>
+                    </tr>
+                <?php else: ?>
+                    <?php foreach ($certificates as $certificate): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($certificate['FirstName'] . ' ' . $certificate['LastName']); ?></td>
+                            <td><?php echo htmlspecialchars($certificate['StudentGroup']); ?></td>
+                            <td><?php echo htmlspecialchars($certificate['StartDate']); ?></td>
+                            <td><?php echo htmlspecialchars($certificate['EndDate']); ?></td>
+                            <td>
+                                <?php echo htmlspecialchars(ucfirst($certificate['CertificatStatus'])); ?> <!-- Display Status -->
+                            </td>
+                            <td>
+                                <?php if (!empty($certificate['photoPath'])): ?>
+                                    <a href="<?php echo htmlspecialchars($certificate['photoPath']); ?>" target="_blank">View</a>
+                                <?php else: ?>
+                                    No File
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </div>
-  </section>
+</section>
 
   <footer class="container footer mt-5">
     <div class="row justify-content-center g-4">
