@@ -32,10 +32,12 @@
 
             <div class="col-md-5 d-flex flex-column justify-content-center align-items-center ps-5">
                 <form class="form-section w-75"
-                      action="../Certificat S-P/cetificat_medical.html" 
-                      method="get">
+                      action="../../php/login/person_login.php" 
+                      method="post">
                     <h2>Hello prof!</h2>
                     <p>Welcome back</p>
+
+                    <input type="hidden" name="login_source" value="prof">
 
                     <!-- Email Input -->
                     <div class="mt-5 mb-3">
@@ -58,7 +60,7 @@
                             <input 
                               type="password" 
                               id="password" 
-                              name="profPassword" 
+                              name="password" 
                               class="form-control p-3" 
                               placeholder="Password" 
                               required>

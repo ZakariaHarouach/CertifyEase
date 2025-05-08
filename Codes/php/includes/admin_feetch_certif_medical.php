@@ -27,12 +27,12 @@ try {
             student.StudentGroup
         FROM certificatesmedical
         INNER JOIN people ON certificatesmedical.PersonCIN = people.CIN
-        INNER JOIN student ON student.PersonCIN = people.CIN
+        LEFT JOIN student ON student.PersonCIN = people.CIN
         WHERE certificatesmedical.CertificatStatus = 'pending'
     ";
 
     if (!empty($searchQuery)) {
-        $query .= " AND people.CIN LIKE :searchQuery";
+        $query .= " AND (people.CIN LIKE :searchQuery OR people.FirstName LIKE :searchQuery OR people.LastName LIKE :searchQuery)";
     }
 
     $stmt = $pdo->prepare($query);

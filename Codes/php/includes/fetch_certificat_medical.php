@@ -1,14 +1,16 @@
 <?php
 session_start();
 
-require_once 'db.php'; 
+require_once 'db.php';
 
 if (!isset($_SESSION['email']) || !isset($_SESSION['first_name'])) {
-    header("Location: ../../html/student/login_student.html"); // Redirect to the login page
+    header("Location: ../../html/student/login_student.html");
     exit();
 }
 
 $email = $_SESSION['email'];
+$isAdmin = $_SESSION['is_admin'] ?? false; 
+$isProf = $_SESSION['is_prof'] ?? false;  
 
 try {
     $pdo = new PDO("mysql:host=localhost;dbname=certieasedb", "root", $pass);
@@ -26,12 +28,29 @@ try {
             student.StudentGroup
         FROM certificatesmedical
         INNER JOIN people ON certificatesmedical.PersonCIN = people.CIN
-        INNER JOIN student ON student.PersonCIN = people.CIN
-        WHERE people.mail = :email
+        LEFT JOIN student ON student.PersonCIN = people.CIN
     ";
 
-    $certStmt = $pdo->prepare($certQuery);
-    $certStmt->execute(['email' => $email]);
+    if ($isAdmin) {
+        if (strpos($_SERVER['PHP_SELF'], 'cetificat_medical.php') !== false) {
+            $certQuery .= " WHERE people.mail = :email";
+            $certStmt = $pdo->prepare($certQuery);
+            $certStmt->execute(['email' => $email]);
+        } else {
+            $certQuery .= " WHERE 1"; 
+            $certStmt = $pdo->prepare($certQuery);
+            $certStmt->execute();
+        }
+    } elseif ($isProf) {
+        $certQuery .= " WHERE people.mail = :email";
+        $certStmt = $pdo->prepare($certQuery);
+        $certStmt->execute(['email' => $email]);
+    } else {
+        $certQuery .= " WHERE people.mail = :email";
+        $certStmt = $pdo->prepare($certQuery);
+        $certStmt->execute(['email' => $email]);
+    }
+
     $certificates = $certStmt->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {

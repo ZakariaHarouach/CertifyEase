@@ -30,12 +30,14 @@
 
             <div class="col-md-5 d-flex flex-column justify-content-center align-items-center ps-5">
                 <form class="form-section w-75"
-                      action="../../php/login/student_login.php" 
+                      action="../../php/login/person_login.php" 
                       method="post"
                       onsubmit="return validateLoginForm()">
 
                     <h2>Hello Student!</h2>
                     <p>Welcome back</p>
+
+                    <input type="hidden" name="login_source" value="student">
 
                     <!-- Email Input -->
                     <div class="mt-5 mb-3">

@@ -130,59 +130,61 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
   <!-- Table Section -->
   <section class="container mt-5 mb-5">
-    <div class="section-title display-4 mb-5">Medical certifications</div>
+    <div class="section-title display-4 mb-5">Medical Certifications</div>
     <div class="table-responsive">
-      <table class="table table-bordered">
-      <thead>
-          <tr>
-              <th>CIN</th>
-              <th>Group</th>
-              <th>Date</th>
-              <th>Status</th> <!-- Add Status column -->
-              <th>Accepter / Refuser</th>
-          </tr>
-      </thead>
-      <tbody>
-          <?php if (empty($certificates)): ?>
-              <tr>
-                  <td colspan="5" class="text-center">No certificates found.</td>
-              </tr>
-          <?php else: ?>
-              <?php foreach ($certificates as $certificate): ?>
-                  <tr id="row-<?php echo $certificate['MdCerID']; ?>" data-id="<?php echo $certificate['MdCerID']; ?>">
-                      <td><?php echo htmlspecialchars($certificate['CIN']); ?></td>
-                      <td><?php echo htmlspecialchars($certificate['StudentGroup']); ?></td>
-                      <td><?php echo htmlspecialchars($certificate['StartDate']); ?></td>
-                      <td><?php echo htmlspecialchars($certificate['CertificatStatus']); ?></td> <!-- Display Status -->
-                      <td class="text-center">
-                          <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
-                              <button 
-                                  class="btn btn-accepter" 
-                                  data-bs-toggle="modal" 
-                                  data-bs-target="#actionModal"
-                                  data-id="<?php echo $certificate['MdCerID']; ?>"
-                                  data-action="accept"
-                              >
-                                  Accepter
-                              </button>
-                              <button 
-                                  class="btn btn-refuser" 
-                                  data-bs-toggle="modal" 
-                                  data-bs-target="#actionModal"
-                                  data-id="<?php echo $certificate['MdCerID']; ?>"
-                                  data-action="reject"
-                              >
-                                  Refuser
-                              </button>
-                          </div>
-                      </td>
-                  </tr>
-              <?php endforeach; ?>
-          <?php endif; ?>
-      </tbody>
-      </table>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>CIN</th>
+                    <th>Name</th>
+                    <th>Group</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Accepter / Refuser</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (empty($certificates)): ?>
+                    <tr>
+                        <td colspan="6" class="text-center">No certificates found.</td>
+                    </tr>
+                <?php else: ?>
+                    <?php foreach ($certificates as $certificate): ?>
+                        <tr id="row-<?php echo $certificate['MdCerID']; ?>" data-id="<?php echo $certificate['MdCerID']; ?>">
+                            <td><?php echo htmlspecialchars($certificate['CIN']); ?></td>
+                            <td><?php echo htmlspecialchars($certificate['FirstName'] . ' ' . $certificate['LastName']); ?></td> <!-- Display Name -->
+                            <td><?php echo htmlspecialchars($certificate['StudentGroup']); ?></td>
+                            <td><?php echo htmlspecialchars($certificate['StartDate']); ?></td>
+                            <td><?php echo htmlspecialchars($certificate['CertificatStatus']); ?></td>
+                            <td class="text-center">
+                                <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
+                                    <button 
+                                        class="btn btn-accepter" 
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#actionModal"
+                                        data-id="<?php echo $certificate['MdCerID']; ?>"
+                                        data-action="accept"
+                                    >
+                                        Accepter
+                                    </button>
+                                    <button 
+                                        class="btn btn-refuser" 
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#actionModal"
+                                        data-id="<?php echo $certificate['MdCerID']; ?>"
+                                        data-action="reject"
+                                    >
+                                        Refuser
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </div>
-  </section>
+</section>
 
   <!-- Modal -->
   <div 

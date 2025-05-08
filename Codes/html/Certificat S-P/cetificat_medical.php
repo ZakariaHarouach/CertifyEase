@@ -85,8 +85,18 @@ require_once '../../php/includes/fetch_certificat_medical.php';
               <span id="fileName">
                 <i class="fas fa-paperclip me-2"></i> Add your certificate here
               </span>
-              <input type="file" id="certificate" name="certificate" class="custom-file-input" required />
+              <input 
+                type="file" 
+                id="certificate" 
+                name="certificate" 
+                class="custom-file-input" 
+                required 
+                onchange="updateFileName(this)"
+              />
             </label>
+            <button type="submit" class="btn btn-validate ms-3">
+              <i class="fas fa-arrow-right"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -134,7 +144,7 @@ require_once '../../php/includes/fetch_certificat_medical.php';
                     <?php foreach ($certificates as $certificate): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($certificate['FirstName'] . ' ' . $certificate['LastName']); ?></td>
-                            <td><?php echo htmlspecialchars($certificate['StudentGroup']); ?></td>
+                            <td><?php echo htmlspecialchars($certificate['StudentGroup'] ?? 'N/A'); ?></td>
                             <td><?php echo htmlspecialchars($certificate['StartDate']); ?></td>
                             <td><?php echo htmlspecialchars($certificate['EndDate']); ?></td>
                             <td>
@@ -208,6 +218,17 @@ require_once '../../php/includes/fetch_certificat_medical.php';
   <script src="../../js/animations.js"></script>
 
   <script src="../../js/certifications validation/medical_certif_validation.js"></script>
+
+  <script>
+    function updateFileName(input) {
+      const fileNameSpan = document.getElementById('fileName');
+      if (input.files && input.files[0]) {
+        fileNameSpan.textContent = input.files[0].name; // Update the span with the file name
+      } else {
+        fileNameSpan.textContent = "Add your certificate here"; // Reset if no file is selected
+      }
+    }
+  </script>
 
 </body>
 </html>

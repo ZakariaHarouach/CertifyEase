@@ -2,7 +2,7 @@
 $host = 'localhost';
 $db = 'certieasedb';
 $user = 'root';
-$pass = 'Adam123.123$';
+$pass = 'mysql';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, 'Adam123.123$');
