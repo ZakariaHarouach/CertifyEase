@@ -8,16 +8,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Determine the user's role and set the correct CIN
     if (isset($_SESSION['is_prof']) && $_SESSION['is_prof'] === true) {
-        // If the user is a prof, use Prof CIN
         $personCIN = $_SESSION['prof_CIN'] ?? null;
+
     } elseif (isset($_SESSION['student_details']['PersonCIN'])) {
-        // If the user is a student, use Student CIN
         $personCIN = $_SESSION['student_details']['PersonCIN'];
+
     } elseif (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true) {
-        // If the user is an admin, use Admin CIN
         $personCIN = $_SESSION['admin_CIN'] ?? null;
+
     } else {
-        // If no valid role is found, throw an error
         echo "Error: User role not recognized.";
         exit();
     }
@@ -74,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ]);
 
             if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true) {
-                header("Location: ../../html/admin/mange_certificat_medicale.php");
+                header("Location: ../../html/Certificat S-P/cetificat_medical.php");
             } else {
                 header("Location: ../../html/Certificat S-P/cetificat_medical.php");
             }

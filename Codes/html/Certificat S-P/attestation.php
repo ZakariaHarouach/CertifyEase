@@ -114,10 +114,10 @@ require_once '../../php/attestation/traitement_attestation.php';
                 <?php if (!empty($demands)): ?>
                     <?php foreach ($demands as $demand): ?>
                         <tr>
-                            <td><?= htmlspecialchars($demand['FirstName'] . ' ' . $demand['LastName']) ?></td>
-                            <td><?= htmlspecialchars($demand['StudentGroup']) ?></td>
-                            <td><?= htmlspecialchars($demand['DemendDate']) ?></td>
-                            <td><?= htmlspecialchars($demand['DemendStatus']) ?></td>
+                            <td><?php echo htmlspecialchars($demand['FirstName'] . ' ' . $demand['LastName']); ?></td>
+                            <td><?php echo htmlspecialchars($demand['StudentGroup']); ?></td>
+                            <td><?php echo htmlspecialchars($demand['DemendDate']); ?></td>
+                            <td><?php echo htmlspecialchars(ucfirst($demand['DemendStatus'])); ?></td> <!-- Display the status -->
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -130,52 +130,52 @@ require_once '../../php/attestation/traitement_attestation.php';
     </div>
 </section>
 
+<!-- Modal -->
+<div 
+    class="modal fade" 
+    id="actionModal" 
+    tabindex="-1" 
+    aria-labelledby="actionModalLabel" 
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="actionModalLabel">Confirmation</h5>
+                <button 
+                    type="button" 
+                    class="btn-close" 
+                    data-bs-dismiss="modal" 
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to <span id="actionType"></span> this attestation?
+            </div>
+            <div class="modal-footer">
+                <form method="POST" action="mange_attestation_scolariter.php">
+                    <input type="hidden" name="attestation_id" id="attestationIdInput">
+                    <input type="hidden" name="action" id="actionInput">
+                    <button 
+                        type="button" 
+                        class="btn btn-cancel" 
+                        data-bs-dismiss="modal"
+                    >
+                        Cancel
+                    </button>
+                    <button 
+                        type="submit" 
+                        class="btn btn-accepter"
+                    >
+                        Confirm
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
   <footer class="container footer mt-5">
-    <div class="row justify-content-center g-4">
-      
-      <div class="col-md-4">
-        <div class="glass-box">
-          <div class="footer-title">Quick links</div>
-          <a href="#" class="footer-link">Certificat Medicale</a>
-          <a href="#" class="footer-link">School Certificate</a>
-          <a href="#" class="footer-link">About Us</a>
-          <a href="#" class="footer-link">Sign In</a>
-          <a href="#" class="footer-link">Sign Up</a>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="glass-box">
-          <div class="footer-title">Team:</div>
-          <div class="footer-text">Adam Elmekadem</div>
-          <div class="footer-text">Zakaria Harouach</div>
-          <div class="footer-text">Abdesamad Tikonab</div>
-          <div class="footer-text">Ilyas Dahs</div>
-          <div class="footer-text italic">Ms. Chaimae Haoul <small>(Teacher)</small></div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="glass-box">
-          <div class="footer-title">Thanks For:</div>
-          <div class="footer-text">Ofppt Ntic Rabat</div>
-          <div class="footer-text">Ms Wassima Akhrif</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      © 2024 CertifyEase. All rights reserved.
-      <div class="footer-links-bottom">
-        <a href="#">Privacy Policy</a> |
-        <a href="#">Services Terms</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>

@@ -28,16 +28,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute(['studentCIN' => $studentCIN]);
         $lastDemand = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($lastDemand) {
-            $lastDemandDate = new DateTime($lastDemand['DemendDate']);
-            $currentDate = new DateTime($demandDate);
-            $interval = $lastDemandDate->diff($currentDate);
+        // if ($lastDemand) {
+        //     $lastDemandDate = new DateTime($lastDemand['DemendDate']);
+        //     $currentDate = new DateTime($demandDate);
+        //     $interval = $lastDemandDate->diff($currentDate);
 
-            if ($interval->m < 3 && $interval->y == 0) {
-                echo "You can only submit a new demand every 3 months. Your last demand was on " . $lastDemandDate->format('Y-m-d') . ".<br>";
-                exit();
-            }
-        }
+        //     if ($interval->m < 3 && $interval->y == 0) {
+        //         echo "You can only submit a new demand every 3 months. Your last demand was on " . $lastDemandDate->format('Y-m-d') . ".<br>";
+        //         exit();
+        //     }
+        // }
 
         $query = "
             INSERT INTO demend (StudentCIN, DemendStatus, DemendDate)
@@ -69,13 +69,7 @@ try {
     $stmt = $pdo->prepare($query);
     $stmt->execute(['studentCIN' => $studentCIN]);
     $demands = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // Debugging: Output the fetched demands
-    echo "<pre>";
-    print_r($demands);
-    echo "</pre>";
 } catch (PDOException $e) {
-    // Debugging: Output the error message if the fetch query fails
     echo "Error during fetch: " . $e->getMessage() . "<br>";
     exit();
 }

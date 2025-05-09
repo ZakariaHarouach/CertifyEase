@@ -115,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             id="search" 
                             name="searchQuery" 
                             class="form-control reason-input ms-3 border-0" 
-                            placeholder="Search for a student by CIN" 
+                            placeholder="Search for a user by CIN" 
                             value="<?php echo htmlspecialchars($_GET['searchQuery'] ?? ''); ?>"
                         />
                     </label>
@@ -124,6 +124,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </button>
                 </div>
             </div>
+        </div>
+
+        <!-- Validate Button -->
+        <div class="row justify-content-center w-100">
+          <div class="col-12 col-md-5 col-lg-3 text-center w-75">
+            <button type="submit" class="btn btn-validate px-5 py-3 w-50 rounded">Search</button>
+          </div>
         </div>
     </form>
   </section>
@@ -153,7 +160,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <tr id="row-<?php echo $certificate['MdCerID']; ?>" data-id="<?php echo $certificate['MdCerID']; ?>">
                             <td><?php echo htmlspecialchars($certificate['CIN']); ?></td>
                             <td><?php echo htmlspecialchars($certificate['FirstName'] . ' ' . $certificate['LastName']); ?></td> <!-- Display Name -->
-                            <td><?php echo htmlspecialchars($certificate['StudentGroup']); ?></td>
+                            <td><?php echo htmlspecialchars($certificate['StudentGroup'] ?? 'N/A'); ?></td>
                             <td><?php echo htmlspecialchars($certificate['StartDate']); ?></td>
                             <td><?php echo htmlspecialchars($certificate['CertificatStatus']); ?></td>
                             <td class="text-center">
