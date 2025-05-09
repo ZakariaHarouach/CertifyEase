@@ -1,5 +1,5 @@
 <?php
-require_once '../../php/includes/fetch_certificat_medical.php';
+require_once '../../php/attestation/traitement_attestation.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ require_once '../../php/includes/fetch_certificat_medical.php';
 
   <link rel="stylesheet" href="../../css/navbar.css"/>
   <link rel="stylesheet" href="../../css/footer.css"/>
-  <link rel="stylesheet" href="../../css/certificat_medical.css"/>
+  <link rel="stylesheet" href="../../css/attestation.css"/>
 </head>
 
 <body>
@@ -27,7 +27,7 @@ require_once '../../php/includes/fetch_certificat_medical.php';
     <div class="container-fluid py-2">
 
       <!-- Left: Logo -->
-      <a class="navbar-brand d-flex align-items-center" href="/Codes/html/index/index.html">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="../../../Documents/Logo-SVG/Asset-1.svg" alt="Logo" class="navbar-logo">
       </a>
 
@@ -41,10 +41,10 @@ require_once '../../php/includes/fetch_certificat_medical.php';
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mx-auto gap-3">
           <li class="nav-item">
-            <a class="nav-link" href="#">Certificat Médical</a>
+            <a class="nav-link" href="cetificat_medical.php">Certificat Médical</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="attestation.php">Demande Attestation</a>
+            <a class="nav-link" href="#">Demande Attestation</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#aboutUS">À propos</a>
@@ -65,34 +65,21 @@ require_once '../../php/includes/fetch_certificat_medical.php';
   <!-- Greeting -->
 
   <section class="container full-height d-flex flex-column justify-content-center">
-    <form 
-      method="POST" 
-      action="../../php/cerificat madicale/add_certificate.php" 
-      enctype="multipart/form-data" 
-      class="w-100"
-      onsubmit="return validateCertificateForm()"
-    >
+    <form class="w-100"
+    action="../../php/attestation/traitement_attestation.php"
+    method="POST"
+    onsubmit="return ValidateAddictation()">
       <!-- Greeting -->
       <div class="hello-msg text-center display-4 mb-5">
-        Hello, <span class="username" data-name="<?php echo htmlspecialchars($_SESSION['first_name']) ?? 'Student'; ?>"></span><span class="cursor">|</span>
+        Hello, <span class="username" data-name="<?php echo htmlspecialchars($_SESSION['first_name'])?? 'Student'; ?>"></span><span class="cursor">|</span>
       </div>
 
       <!-- File Upload -->
       <div class="row justify-content-center mb-4">
         <div class="col-12 col-md-10 col-lg-8">
           <div class="file-upload-box d-flex justify-content-between align-items-center p-3 rounded">
-            <label for="certificate" class="file-label d-flex align-items-center w-100">
-              <span id="fileName">
-                <i class="fas fa-paperclip me-2"></i> Add your certificate here
-              </span>
-              <input 
-                type="file" 
-                id="certificate" 
-                name="certificate" 
-                class="custom-file-input" 
-                required 
-                onchange="updateFileName(this)"
-              />
+            <label for="reason" class="file-label d-flex align-items-center w-100">
+              <input type="text" id="reason" class="form-control reason-input ms-3 border-0" placeholder="Write your reason here..." />
             </label>
             <button type="submit" class="btn btn-validate ms-3">
               <i class="fas fa-arrow-right"></i>
@@ -101,20 +88,10 @@ require_once '../../php/includes/fetch_certificat_medical.php';
         </div>
       </div>
 
-      <!-- Date Range -->
-      <div class="row justify-content-center align-items-center mb-4">
-        <div class="col-12 col-md-5 col-lg-4 mt-lg-0 mb-lg-0 mb-4">
-          <input type="date" name="start_date" class="form-control py-3 px-3" required />
-        </div>
-        <div class="col-12 col-md-5 col-lg-4">
-          <input type="date" name="end_date" class="form-control py-3 px-3" required />
-        </div>
-      </div>
-
       <!-- Validate Button -->
       <div class="row justify-content-center w-100">
         <div class="col-12 col-md-5 col-lg-3 text-center w-75">
-          <button type="submit" class="btn btn-validate px-5 py-3 w-50 rounded">Validate</button>
+          <button class="btn btn-validate px-5 py-3 w-50 rounded">Validate</button>
         </div>
       </div>
     </form>
@@ -122,43 +99,31 @@ require_once '../../php/includes/fetch_certificat_medical.php';
   
   <!-- Table Section -->
   <section class="container mt-5 mb-5">
-    <div class="section-title display-4 mb-5">Medical Certifications</div>
+    <div class="section-title display-4 mb-5">School Certifications</div>
     <div class="table-responsive">
         <table class="table table-bordered">
             <thead class="p-2">
                 <tr>
                     <th>Name</th>
                     <th>Group</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
+                    <th>Date</th>
                     <th>Status</th>
-                    <th>File</th>
                 </tr>
             </thead>
             <tbody>
-                <?php if (empty($certificates)): ?>
-                    <tr>
-                        <td colspan="6" class="text-center">No certificates found.</td>
-                    </tr>
-                <?php else: ?>
-                    <?php foreach ($certificates as $certificate): ?>
+                <?php if (!empty($demands)): ?>
+                    <?php foreach ($demands as $demand): ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($certificate['FirstName'] . ' ' . $certificate['LastName']); ?></td>
-                            <td><?php echo htmlspecialchars($certificate['StudentGroup'] ?? 'N/A'); ?></td>
-                            <td><?php echo htmlspecialchars($certificate['StartDate']); ?></td>
-                            <td><?php echo htmlspecialchars($certificate['EndDate']); ?></td>
-                            <td>
-                                <?php echo htmlspecialchars(ucfirst($certificate['CertificatStatus'])); ?> <!-- Display Status -->
-                            </td>
-                            <td>
-                                <?php if (!empty($certificate['photoPath'])): ?>
-                                    <a href="<?php echo htmlspecialchars($certificate['photoPath']); ?>" target="_blank">View</a>
-                                <?php else: ?>
-                                    No File
-                                <?php endif; ?>
-                            </td>
+                            <td><?= htmlspecialchars($demand['FirstName'] . ' ' . $demand['LastName']) ?></td>
+                            <td><?= htmlspecialchars($demand['StudentGroup']) ?></td>
+                            <td><?= htmlspecialchars($demand['DemendDate']) ?></td>
+                            <td><?= htmlspecialchars($demand['DemendStatus']) ?></td>
                         </tr>
                     <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="4" class="text-center">No demands found.</td>
+                    </tr>
                 <?php endif; ?>
             </tbody>
         </table>
@@ -217,18 +182,7 @@ require_once '../../php/includes/fetch_certificat_medical.php';
 
   <script src="../../js/animations.js"></script>
 
-  <script src="../../js/certifications validation/medical_certif_validation.js"></script>
-
-  <script>
-    function updateFileName(input) {
-      const fileNameSpan = document.getElementById('fileName');
-      if (input.files && input.files[0]) {
-        fileNameSpan.textContent = input.files[0].name; // Update the span with the file name
-      } else {
-        fileNameSpan.textContent = "Add your certificate here"; // Reset if no file is selected
-      }
-    }
-  </script>
+  <script src="../../js/Certificates_valiations.js"></script>
 
 </body>
 </html>

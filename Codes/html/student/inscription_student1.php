@@ -9,6 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/Login_student.css">
 </head>
+<?php 
+
+    session_start();
+   if($_SERVER["REQUEST_METHOD"]==="POST"){
+
+    $_SESSION["fullName"]=$_POST["fullName"];
+    $_SESSION["cin"]=$_POST["cin"];
+    $_SESSION["Level"]=$_POST["Level"];
+    $_SESSION["gourp"]=$_POST["gourp"];
+    
+    header("Location: inscription_student2.html");
+   }
+  
+?>
 <body>
   <div class="container-fluid">
     <div class="row">      
@@ -22,7 +36,7 @@
       </div>
 
       <div class="col-md-5 d-flex flex-column justify-content-center align-items-center ps-5">
-        <form class="form-section w-75">
+        <form class="form-section w-75" onsubmit="return validateFirstForm()" method="POST" action="inscription_student1.php">
           <h2>Hello!</h2>
           <p>Sign up to get started</p>
 
@@ -39,7 +53,6 @@
                 required>
             </div>
           </div>
-
           <div class="mb-3">
             <div class="input-group">
               <span class="input-group-text"><i class='bx bx-id-card'></i></span>
@@ -52,7 +65,6 @@
                 required>
             </div>
           </div>
-
           <!-- Student Level Select -->
           <div class="mb-3">
             <div class="input-group">
@@ -92,7 +104,7 @@
           <button 
             id="nextButton"
             name="nextButton" 
-            type="button" 
+            type="submit" 
             class="btn btn-primary w-100 p-3 student">
             Next
           </button>                

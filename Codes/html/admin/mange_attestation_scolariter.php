@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +41,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mx-auto gap-3">
           <li class="nav-item">
-            <a class="nav-link" href="mange_certificat_medicale.html">Gestion C.Medical</a>
+            <a class="nav-link" href="mange_certificat_medicale.php">Gestion C.Medical</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Gestion D'Attestation</a>
@@ -64,7 +68,7 @@
     <form class="w-100">
       <!-- Greeting -->
       <div class="hello-msg text-center display-4 mb-5">
-        Hello, <span class="username" data-name="Adam"></span><span class="cursor">|</span>
+        Hello, <span class="username" data-name="<?php echo htmlspecialchars($_SESSION['first_name']) ?? 'Student'; ?>"></span><span class="cursor">|</span>
       </div>
 
       <!-- File Upload -->

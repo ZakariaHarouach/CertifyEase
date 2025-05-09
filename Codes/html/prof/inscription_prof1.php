@@ -1,3 +1,14 @@
+<?php
+  session_start();
+  if($_SERVER["REQUEST_METHOD"]=="POST"){
+  $_SESSION["profFullName"]= $_POST["profFullName"];
+  $_SESSION["cin"]=$_POST["cin"];
+  $_SESSION["phone"]=$_POST["phone"];
+  $_SESSION["birthday"]=$_POST["birthday"];
+
+  header("Location: inscription_prof2.html");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +34,9 @@
 
             <div class="col-md-5 d-flex flex-column justify-content-center align-items-center ps-5">
                 <form 
-                  class="form-section w-75""
+                  class="form-section w-75"
+                  method = "POST"
+                  action= "inscription_prof1.php"
                 >
                     <h2>Hello!</h2>
                     <p>Sign up to get started</p>
@@ -88,7 +101,7 @@
                     <button 
                       id="NextButton" 
                       name="profNextButton" 
-                      type="button" 
+                      type="submit" 
                       class="btn btn-primary w-100 p-3 prof"
                       onclick="ValidateProfAdminAuthentication(1)">
                       Next

@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a class="nav-link" href="#">Gestion C.Médical</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="mange_attestation_scolariter.html">Gestion C.Scolaire</a>
+            <a class="nav-link" href="mange_attestation_scolariter.php">Gestion C.Scolaire</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#aboutUS">À propos</a>
@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- Greeting -->
       <div class="hello-msg text-center display-4 mb-5">
-        Hello, <span class="username" data-name="Adam"></span><span class="cursor">|</span>
+        Hello, <span class="username" data-name="<?php echo htmlspecialchars($_SESSION['first_name']) ?? 'Student'; ?>"></span><span class="cursor">|</span>
       </div>
 
     <div class="row justify-content-center mb-4">
