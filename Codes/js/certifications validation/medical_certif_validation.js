@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         startDateInput.style.border = "";
         endDateInput.style.border = "";
 
+        // File validation
         if (fileInput.files.length === 0) {
             alert("Please upload your medical certificate.");
             fileInput.style.border = "2px solid rgb(255, 0, 98)";
@@ -36,22 +37,40 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (fileSize > 2) {
                 alert("The file size must not exceed 2 MB.");
                 fileInput.style.border = "2px solid rgb(255, 0, 98)";
-                isValid = false;  
+                isValid = false;
             }
         }
 
+        // Start date validation
         if (startDateInput.value.trim() === "") {
             alert("Please select the start date of your medical certificate.");
             startDateInput.style.border = "2px solid rgb(255, 0, 98)";
             isValid = false;
+        } else {
+            const startDate = new Date(startDateInput.value);
+            const currentDate = new Date();
+            const twoDaysBefore = new Date();
+            twoDaysBefore.setDate(currentDate.getDate() - 2);
+
+            if (startDate > currentDate) {
+                alert("The start date cannot be later than the current date.");
+                startDateInput.style.border = "2px solid rgb(255, 0, 98)";
+                isValid = false;
+            } else if (startDate < twoDaysBefore) {
+                alert("The start date cannot be earlier than 2 days before the current date.");
+                startDateInput.style.border = "2px solid rgb(255, 0, 98)";
+                isValid = false;
+            }
         }
 
+        // End date validation
         if (endDateInput.value.trim() === "") {
             alert("Please select the end date of your medical certificate.");
             endDateInput.style.border = "2px solid rgb(255, 0, 98)";
             isValid = false;
         }
 
+        // Date difference validation
         if (startDateInput.value && endDateInput.value) {
             const startDate = new Date(startDateInput.value);
             const endDate = new Date(endDateInput.value);
@@ -61,6 +80,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 startDateInput.style.border = "2px solid rgb(255, 0, 98)";
                 endDateInput.style.border = "2px solid rgb(255, 0, 98)";
                 isValid = false;
+            } else {
+                const dateDifference = (endDate - startDate) / (1000 * 60 * 60 * 24); // Difference in days
+                if (dateDifference > 7) {
+                    alert("The difference between the start and end dates cannot exceed 7 days.");
+                    startDateInput.style.border = "2px solid rgb(255, 0, 98)";
+                    endDateInput.style.border = "2px solid rgb(255, 0, 98)";
+                    isValid = false;
+                }
             }
         }
 

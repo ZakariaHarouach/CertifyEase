@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header("Location: ../../html/Certificat S-P/cetificat_medical.php");
                     exit();
                 } else {
-                    echo "You must log in with a student account.";
+                    header("Location: ../../html/error_pages/log_with_studentAcc.html");
                     exit();
                 }
             } elseif ($loginSource === 'admin') {
@@ -116,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header("Location: ../../html/admin/choix-fonctionement.html");
                     exit();
                 } else {
-                    echo "You must log in with a admin account.";
+                    header("Location: ../../html/error_pages/log_with_adminAcc.html");
                     exit();
                 }
             } elseif ($loginSource === 'prof') {
@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header("Location: ../../html/Certificat S-P/cetificat_medical.php");
                     exit();
                 } else {
-                    echo "You must log in with a prof account.";
+                    header("Location: ../../html/error_pages/log_with_profAcc.html");
                     exit();
                 }
             } else {
@@ -147,7 +147,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             }
         } else {
-            echo "Invalid email or password.";
+            header("Location: ../../html/error_pages/user_not_found.html");
             exit();
         }
     } catch (PDOException $e) {

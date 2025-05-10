@@ -40,7 +40,7 @@ $UserMail = $_SESSION['UserMail'];
 
       <!-- Right Section (Code Input and New Password Form) -->
       <div class="col-md-5 d-flex flex-column justify-content-center align-items-center ps-5">
-        <form class="form-section w-75" action="../../php/forget_password/NewPassword.php" method="POST">
+        <form class="form-section w-75" action="../../php/forget_password/NewPassword.php" method="POST" onsubmit="return validateForgetPasswordForm();">
           <h2>Ooooh !</h2>
           <p>Verify your Gmail and enter the code</p>
 
@@ -52,7 +52,6 @@ $UserMail = $_SESSION['UserMail'];
             </div>
           </div>
 
-          <!-- Password Input -->
           <div class="mb-3">
             <div class="input-group">
               <span class="input-group-text"><i class="bx bx-lock"></i></span>
@@ -60,7 +59,6 @@ $UserMail = $_SESSION['UserMail'];
             </div>
           </div>
 
-          <!-- Confirm Password Input -->
           <div class="mb-3">
             <div class="input-group">
               <span class="input-group-text"><i class="bx bx-lock"></i></span>
